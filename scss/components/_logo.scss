@@ -10,6 +10,10 @@
     margin-left: 50px;
   }
 
+  @include abstracts.breakpoint(md) {
+    margin-left: 0;
+  }
+
   @include abstracts.breakpoint(sm) {
     margin-left: 0;
   }
