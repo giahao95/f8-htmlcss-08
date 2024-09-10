@@ -1366,6 +1366,7 @@ textarea {
   left: 0;
   width: min(1240px, 100%);
   padding-top: 54px;
+  display: none;
 }
 .dropdown__inner {
   --inner-padding: 30px;
@@ -1407,6 +1408,11 @@ textarea {
   flex-shrink: 0;
   width: 36px;
   height: 36px;
+}
+@media (max-width: 1199.98px) {
+  .menu-column__icon {
+    display: none;
+  }
 }
 .menu-column__icon-1 {
   width: 30px;
