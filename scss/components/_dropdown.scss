@@ -95,7 +95,7 @@
   }
 
   &__item {
-    &:hover .sub-menu {
+    &--active .sub-menu {
       display: grid;
     }
   }
@@ -104,6 +104,7 @@
     padding-bottom: 0;
   }
 
+  &__item--active > &__link,
   &__item:hover > &__link {
     color: #0071dc;
     font-weight: 500;
