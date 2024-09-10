@@ -29,14 +29,6 @@
   @include abstracts.breakpoint(sm) {
     padding: 16px 0;
   }
-
-  &__more {
-    display: none;
-
-    @include abstracts.breakpoint(lg) {
-      display: block;
-    }
-  }
 }
 
 .navbar {
@@ -57,10 +49,14 @@
     border-radius: 0px 20px 20px 0px;
     background: #fff;
 
+    opacity: 0;
+    visibility: hidden;
     translate: -100%;
-    transition: 0.5s;
+    transition: all 0.5s;
 
     &.show {
+      opacity: 1;
+      visibility: visible;
       translate: 0;
     }
 
@@ -130,6 +126,9 @@
     @include abstracts.breakpoint(lg) {
       justify-content: space-between;
       padding: 0 30px;
+
+      font-size: 1.6rem;
+      line-height: 150%;
     }
   }
 
@@ -153,16 +152,6 @@
     border-radius: 8px;
     background: var(--top-act-group-bg-color);
     box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
-
-    @include abstracts.breakpoint(md) {
-      display: none;
-    }
-  }
-
-  &__group--single {
-    @include abstracts.breakpoint(lg) {
-      display: none;
-    }
   }
 
   &__group--single &__btn {
