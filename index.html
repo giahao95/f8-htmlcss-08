@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,16 +105,16 @@
         <div class="home__row">
           <h2 class="home__heading">Total LavAzza 1320</h2>
           <div class="filter-wrap">
-            <button class="filter-btn">
+            <button class="filter-btn js-toggle" toggle-target="#home-filter">
               Filter
               <img src="./assets/icons/filter.svg" alt="" class="filter-btn__icon icon" />
             </button>
 
-            <div class="filter">
+            <div id="home-filter" class="filter hide">
               <img src="./assets/icons/filter-arrow.png" alt="" class="filter__arrow" />
               <h3 class="filter__heading">Filter</h3>
               <form action="" class="filter__form">
-                <div class="filter__row">
+                <div class="filter__row filter__content">
                   <!-- Filter col 1 -->
                   <div class="filter__col">
                     <label for="" class="filter__label">Price</label>
@@ -171,7 +171,7 @@
                     <div class="filter__form-group">
                       <div class="filter__form-text-input">
                         <input type="text" placeholder="Search brand name" class="filter__form-input" />
-                        <img src="./assets/icons/search.svg" alt="" class="filter__form-input-icon" />
+                        <img src="./assets/icons/search.svg" alt="" class="filter__form-input-icon icon" />
                       </div>
                     </div>
                     <div class="filter__form-group">
@@ -185,8 +185,10 @@
                 </div>
 
                 <div class="filter__row filter__footer">
-                  <button class="btn btn-text filter__cancel">Cancel</button>
-                  <button class="btn btn-primary filter__submit">Show Result</button>
+                  <button class="btn btn-text filter__cancel js-toggle" toggle-target="#home-filter">Cancel</button>
+                  <button class="btn btn-primary filter__submit js-toggle" toggle-target="#home-filter">
+                    Show Result
+                  </button>
                 </div>
               </form>
             </div>
