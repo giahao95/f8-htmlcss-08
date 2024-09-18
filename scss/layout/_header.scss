@@ -21,10 +21,32 @@
 
   @include abstracts.screen(lg) {
     padding: 20px 0;
+
+    &__logo {
+      gap: 10px !important;
+      margin-left: 50px;
+
+      &-img {
+        width: 24px;
+      }
+
+      &-title {
+        font-size: 1.8rem !important;
+        line-height: 144.444% !important;
+      }
+    }
   }
 
   @include abstracts.screen(md) {
     justify-content: space-between;
+
+    &__logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      margin-left: 0;
+    }
   }
 
   @include abstracts.screen(sm) {
