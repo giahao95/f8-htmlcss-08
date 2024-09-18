@@ -1,6 +1,11 @@
 .form {
   width: 100%;
 
+  &:has(:invalid) &__submit-btn {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &__group {
     + .form__group {
       margin-top: 30px;
@@ -9,6 +14,20 @@
     &-inline {
       display: flex;
       align-items: center;
+    }
+
+    &:has(:invalid):has(.form__input:not(:placeholder-shown)) {
+      .form__error {
+        display: block;
+      }
+
+      .form__input-icon {
+        display: none;
+      }
+
+      .form__input-icon-error {
+        display: block;
+      }
     }
   }
 
@@ -19,6 +38,15 @@
     padding: 0 12px;
     border-radius: 10px;
     border: 1.5px solid #9e9da8;
+
+    &:focus-within {
+      border-color: #77dae6;
+    }
+
+    &:has(:invalid):has(.form__input:not(:placeholder-shown)) {
+      border-color: red;
+      background: rgba($color: red, $alpha: 0.1);
+    }
   }
 
   &__input {
@@ -31,11 +59,20 @@
     border: none;
     border-radius: 10px;
 
-    &-icon {
+    &-icon,
+    &-icon-error {
       width: 24px;
       height: 24px;
       margin-left: 12px;
+    }
+
+    &-icon {
       filter: var(--form-input-icon);
+    }
+
+    &-icon-error {
+      display: none;
+      animation: shake 0.5s;
     }
 
     &::placeholder {
@@ -48,15 +85,45 @@
   }
 
   &__checkbox {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
+    user-select: none;
 
     &-label {
+      margin-left: 29px;
       color: #9e9da8;
       font-size: 1.5rem;
       font-weight: 500;
       line-height: 146.667%;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      width: 19px;
+      height: 19px;
+      border-radius: 5px;
+      border: 1.5px solid #9e9da8;
+    }
+
+    &:has(:checked)::before {
+      background: #ffb700;
+      border-color: #ffb700;
+    }
+
+    &:has(:checked)::after {
+      left: 2px;
+      top: 5px;
+      width: 15px;
+      height: 8px;
+      border: 3px solid;
+      border-color: transparent transparent #fff #fff;
+      rotate: -45deg;
     }
   }
 
@@ -64,5 +131,13 @@
     &-icon {
       filter: var(--form-input-icon);
     }
+  }
+
+  &__error {
+    display: none;
+    margin: 5px;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 }
