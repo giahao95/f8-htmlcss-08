@@ -2530,6 +2530,40 @@ textarea {
   border: 1.5px solid #6fdb80;
 }
 
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--breadcrumbs-bg);
+  box-shadow: 0px 20px 60px 10px var(--breadcrumbs-shadow-colors);
+}
+@media (max-width: 767.98px) {
+  .breadcrumbs {
+    gap: 16px;
+  }
+}
+.breadcrumbs__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9e9da8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  white-space: nowrap;
+}
+@media (max-width: 767.98px) {
+  .breadcrumbs__link {
+    font-size: 1.4rem;
+  }
+}
+.breadcrumbs__link--current {
+  color: inherit;
+}
+
 html {
   --text-color: #1a162e;
   --icon-color: brightness(0) saturate(100%) invert(5%) sepia(20%) saturate(5213%) hue-rotate(231deg) brightness(101%)
@@ -2557,6 +2591,9 @@ html {
   --filter-form-tag-bg: #f8f8fb;
   --auth-content-bg: #fff;
   --form-placeholder-color: #d2d1d6;
+  --product-detail-bg: #fff;
+  --breadcrumbs-bg: #f6f6f6;
+  --breadcrumbs-shadow-color: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -2572,6 +2609,16 @@ html {
 @media (max-width: 767.98px) {
   html {
     --auth-intro-bg: #fff;
+  }
+}
+@media (max-width: 767.98px) {
+  html {
+    --product-detail-bg: #fafafd;
+  }
+}
+@media (max-width: 767.98px) {
+  html {
+    --breadcrumbs-bg: #fff;
   }
 }
 
@@ -2613,6 +2660,9 @@ html.dark {
   --form-placeholder-color: #b9babe;
   --form-input-icon: brightness(0) saturate(100%) invert(88%) sepia(6%) saturate(137%) hue-rotate(191deg)
     brightness(86%) contrast(86%);
+  --product-detail-bg: #292e39;
+  --breadcrumbs-bg: #171c28;
+  --breadcrumbs-shadow-color: rgba(23, 28, 40, 0.2);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2816,6 +2866,16 @@ html.dark {
     margin-top: 25px;
     font-size: 1.6rem;
   }
+}
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--product-detail-bg);
+}
+
+.product-container {
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

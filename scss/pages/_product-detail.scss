@@ -1,0 +1,9 @@
+.product-page {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--product-detail-bg);
+}
+
+.product-container {
+  margin-top: 30px;
+}
