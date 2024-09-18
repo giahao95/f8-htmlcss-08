@@ -7,3 +7,56 @@
 .product-container {
   margin-top: 30px;
 }
+
+.product-preview {
+  padding: 30px;
+
+  &__list {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    padding-top: 92%;
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__thumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__thumb-img {
+    width: 70px;
+    height: 70px;
+
+    border: 1.5px solid #9e9da8;
+    border-radius: 10px;
+    opacity: 0.7;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &--current {
+      opacity: 1;
+      border-color: #77dae6;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
