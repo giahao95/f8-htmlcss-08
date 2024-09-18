@@ -38,6 +38,7 @@
     }
 
     &-img {
+      width: var(--width);
       max-width: 100%;
     }
 
@@ -113,11 +114,19 @@
     }
   }
 
+  &__message {
+    margin-top: 20px;
+  }
+
   &__form {
     margin-top: 60px;
 
     @include abstracts.screen(md) {
       margin-top: 30px;
+    }
+
+    &-forgot {
+      margin-top: 40px;
     }
   }
 
