@@ -12,6 +12,10 @@ $error-color: #f44336;
   &__group {
     + .form__group {
       margin-top: 30px;
+
+      @include abstracts.screen(md) {
+        margin-top: 20px;
+      }
     }
 
     &-inline {
@@ -87,7 +91,7 @@ $error-color: #f44336;
     }
 
     &::placeholder {
-      color: #d2d1d6;
+      color: var(--form-placeholder-color);
     }
   }
 
