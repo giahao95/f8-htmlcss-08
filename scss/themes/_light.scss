@@ -59,8 +59,10 @@ html {
 
   // Product detail
   --product-detail-bg: #fff;
+  --product-info-bg: #f6f6f6;
   @include abstracts.screen(md) {
     --product-detail-bg: #fafafd;
+    --product-info-bg: #fff;
   }
 
   // Breadcrumbs
